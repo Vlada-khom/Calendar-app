@@ -1,0 +1,21 @@
+.App {
+    margin: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 4px;
+}
+
+th {
+    background-color: aqua;
+}
+
+.year {
+    margin-left: 30px;
+}
