@@ -6,8 +6,8 @@ import './styles.css';
 
 
 function App() {
-  const [currentYear, setYear] = React.useState(2021);
-  const [currentMonth, setMonth] = React.useState(5);
+  const [currentYear, setYear] = React.useState(new Date().getFullYear());
+  const [currentMonth, setMonth] = React.useState(new Date().getMonth());
 
   const handlerYearChange = (numberYear) => {
     setYear(numberYear);
@@ -18,7 +18,7 @@ function App() {
 
   }
 
-  const date = new Date(currentYear, currentMonth, 23);
+  const date = new Date(currentYear, currentMonth);
   const month = date.toLocaleString('en', { month: 'long' });
 
   return (

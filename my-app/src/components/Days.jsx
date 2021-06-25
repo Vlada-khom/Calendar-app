@@ -3,19 +3,22 @@ import { DaysWeek } from './DaysWeek';
 export function Days (props){
     let year = props.year;
     let month = props.month;
+    // const today = new Date().getDate();
+  
     let current = new Date(year, month);
+    const currentFirstDay = current.getUTCDay();
+    console.log(currentFirstDay);
+    console.log(current)
     let next = new Date(year, month + 1);
     let diff = (next - current) / (1000 * 3600 * 24);
-    console.log(diff);
     let index = current.getDate();
-    console.log(index);
   
     
     const rows = 5;
     const cols = 7;
   
     let days = [];
-    let k = 1 - index;
+    let k = 1 - index - currentFirstDay + 1;
   
     for (let i = 0; i < rows; i= i + 1) {
       let td = [];
