@@ -2,20 +2,25 @@
     margin: 50px;
 }
 
-table {
-    border-collapse: collapse;
-    border: 1px solid black;
+.year, .month, table {
+    text-align: center;
+    margin: 0 auto;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 4px;
+.year, .month {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 600;
+    width: 130px;
 }
 
-th {
+thead {
     background-color: aqua;
 }
 
-.year {
-    margin-left: 30px;
+button {
+    background-color: rgb(107, 107, 214);
+    color: aliceblue;
+    font-weight: 600;
 }

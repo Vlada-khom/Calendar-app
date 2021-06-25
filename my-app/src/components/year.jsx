@@ -1,30 +1,19 @@
 import React from "react";
-import { Month } from './Month';
 import './styles.css';
 
-
-
-function Year () {
-    let arrayYears = [];
-    
-    for (let i = 1970; i < 2030; i = i + 1) {
-        arrayYears.push(i);
-    };
-    
+export const Year = function(props) {
+    const handlePrevClick = () => {
+        props.onYearChange(props.number - 1);
+    }
+    const handleNextClick = () => {
+        props.onYearChange(props.number + 1);
+    }
+   
     return (
-        <div className="year">
-            <button className="YearArrowLeft">{'<'}</button>
-            <Month />
-            <select>
-                {arrayYears.map(year => 
-                    <option key={year} value={year}>{year}</option>
-                    )}
-            </select>
-            <button className="YearArrowRight">{'>'}</button>
-        </div>
+      <div className="year">
+        <button onClick={handlePrevClick}>{'<'}</button>
+         {props.number}
+        <button onClick={handleNextClick}>{'>'}</button>
+      </div>
     );
-}
-
-export {
-    Year
-}
+};

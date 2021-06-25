@@ -14,23 +14,24 @@ export function Days (props){
     const rows = 5;
     const cols = 7;
   
-    let table = [];
-    let k = 1;
+    let days = [];
+    let k = 1 - index;
   
     for (let i = 0; i < rows; i= i + 1) {
-      let tr = [];
+      let td = [];
       for (let j = 0; j < cols; j++) {
-        
-        tr.push(<td>{k > 0 && k <= diff ? k : ''}</td>);
+        td.push(<td key={k}>{k > 0 && k <= diff ? k : ''}</td>);
         k = k + 1;
       }
-      table.push(<tr>{tr}</tr>);
+      days.push(<tr>{td}</tr>);
       
     }
     return (
       <table>
         <DaysWeek />
-        {table}
+        <tbody>
+          {days}
+        </tbody>
       </table>
     );
   }
