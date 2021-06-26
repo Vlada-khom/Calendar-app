@@ -14,7 +14,7 @@ export function Days (props){
     let index = current.getDate();
   
     
-    const rows = 5;
+    const rows = 6;
     const cols = 7;
   
     let days = [];
