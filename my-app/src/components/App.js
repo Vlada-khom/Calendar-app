@@ -1,36 +1,24 @@
-import React from 'react';
-import {Year} from './year.jsx';
-import { Days } from './Days';
-import{Month} from './Month';
+import { Year } from './Year';
 import './styles.css';
+import {
+  BrowserRouter as Switch, Route,
+} from "react-router-dom";
+import { createBrowserHistory } from "history";
 
+export function App() {
+  const history = createBrowserHistory();
 
-function App() {
-  const [currentYear, setYear] = React.useState(new Date().getFullYear());
-  const [currentMonth, setMonth] = React.useState(new Date().getMonth());
-
-  const handlerYearChange = (numberYear) => {
-    setYear(numberYear);
-  } 
-
-  const handlerMonthChange = (month) => {
-    setMonth(month)
-
+  const handleYearChange = (newValue) => {
+    history.push(`/year/${newValue}`);
   }
-
-  const date = new Date(currentYear, currentMonth);
-  const month = date.toLocaleString('en', { month: 'long' });
 
   return (
     <div className="App">
-      <Year number={currentYear}
-      onYearChange={handlerYearChange}
-      />
-      <Month 
-      number={currentMonth}
-      monthName={month}
-      onMonthChange={handlerMonthChange}/>
-      <Days year={currentYear} month={currentMonth}/>
+      <Switch>
+        <Route path="/year/:yearNumber" render={(props) =>
+          <Year year={Number(props.match.params.yearNumber)} onYearChange={handleYearChange}></Year>
+        }/>
+      </Switch>
     </div>
   );
 }

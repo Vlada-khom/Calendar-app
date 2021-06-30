@@ -2,17 +2,30 @@
     margin: 50px;
 }
 
-.year, .month, table {
+.year {
     text-align: center;
     margin: 0 auto;
 }
 
-.year, .month {
+.year {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-weight: 600;
     width: 130px;
+}
+
+.month {
+    text-align: center;
+    margin: 10px 40px;
+}
+
+.month-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
 }
 
 thead {
