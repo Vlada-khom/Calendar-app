@@ -14,7 +14,9 @@ export const MonthPage = (props) => {
 
     return (
         <>
-        <Link to="/">Back</Link>
+        <Link to="/" style={{textDecoration: 'none', color: 'white', border: '1px solid black',
+         backgroundColor: 'rgb(107, 107, 214)', boxShadow: '1px 1px 1px black',
+         padding: '1px 3px'}}>Back</Link>
         <select style={{textAlign: 'center'}} onChange={handleMonthChange} value={props.month}>
             {monthNames.map((month, index) => (
                 <option key={index} value={index + 1}>{month}</option>

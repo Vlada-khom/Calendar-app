@@ -44,8 +44,13 @@ body {
 }
 
 .day {
-border: 1px solid transparent;
-width: 45px;
+    border: 1px solid transparent;
+    width: 45px;
+}
+.day a {
+    text-decoration: none;
+    color: black;
+
 }
 
 button {
