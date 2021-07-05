@@ -4,12 +4,9 @@ export const DaysWeek = () => {
     
     
     return (
-        <thead>
-            <tr>
-                {daysWeek.map(name => 
-                    <th key={name}>{name}</th>
-                    )}
-            </tr>
-        </thead>
-    );
+        <div className="daysWeek">
+            {daysWeek.map(name => 
+                <div className="day-week" key={name}>{name}</div>
+                )}
+        </div>);
 }

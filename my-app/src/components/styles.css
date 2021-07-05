@@ -6,23 +6,21 @@ body {
 }
 
 .year {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 600;
+    width: 130px;
     text-align: center;
     margin: 0 auto;
     font-size: 20px;
     font-weight: 700;
 }
 
-.year {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-weight: 600;
-    width: 130px;
-}
-
 .month {
     text-align: center; 
     font-size: 20px;
+    
 }
 
 .month-list {
@@ -32,18 +30,27 @@ body {
     justify-content: space-around;
 
 }
+.days-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 335px;
+    border: 1px solid transparent;
+    
+}
 
-thead {
+.day-week {
+    font-weight: 600;
     background-color: aqua;
+}
+
+.day {
+border: 1px solid transparent;
+width: 45px;
 }
 
 button {
     background-color: rgb(107, 107, 214);
     color: aliceblue;
     font-weight: 600;
-}
-
-table {
-    margin: 0 auto;
-    
 }

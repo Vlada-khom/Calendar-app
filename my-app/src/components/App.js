@@ -2,7 +2,7 @@ import { Year } from './Year';
 import { MonthPage } from './MonthPage';
 import { DayPage } from './DayPage';
 import './styles.css';
-import { Redirect, Route, Switch, Link} from "react-router-dom";
+import { Redirect, Route, Switch, } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 export function App() {
