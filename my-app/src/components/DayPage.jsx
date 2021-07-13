@@ -1,11 +1,13 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { storageManager } from "../module/storageManager";
+import { getDayId } from "../tools/dateTools";
 import {NotesContext} from '../tools/notesProvider';
 
 export const DayPage =(props) => {
     const notes = useContext(NotesContext);
     const date = new Date(props.year, props.month - 1, props.day);
-    const note = notes[date.toISOString().substring(0, 10)];
+    const note = notes[getDayId(props.year, props.month - 1, props.day)];
 
     const[memo, setMemo] = useState(note);
     
@@ -16,7 +18,9 @@ export const DayPage =(props) => {
     }
 
     const handleSaveClick = () => {
-        
+        const dateId = getDayId(props.year, props.month - 1, props.day);
+        storageManager.updateNote(dateId, memo);
+        console.log('save');
     }
     return (
         <div style={{textAlign: 'center'}}>

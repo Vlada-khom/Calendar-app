@@ -1,13 +1,14 @@
 import { Redirect, Route, Switch} from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {useContext} from 'react';
+
 
 import { Year } from './Year';
 import { MonthPage } from './MonthPage';
 import { DayPage } from './DayPage';
 import './styles.css';
 import {NotesContext} from '../tools/notesProvider';
+import { storageManager } from "../module/storageManager";
 
 export function App() {
   const history = useHistory();
@@ -15,10 +16,9 @@ export function App() {
   const [notes, setNotes] = useState({});
 
   useEffect(() => {
-    console.log('Load from LocalStarage'); 
-    setNotes({
-      '2021-08-01': 'Hello',
-    });
+    storageManager.addEventListener('update', () => {
+      setNotes(storageManager.notes);
+    })
   }, []);
 
 

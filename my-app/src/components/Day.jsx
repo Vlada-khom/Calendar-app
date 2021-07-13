@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import {useContext} from 'react';
 import {NotesContext} from '../tools/notesProvider';
+import { getDayId } from "../tools/dateTools";
 
 export const Day = ({day, year, month}) => {
     const notes = useContext(NotesContext);
@@ -12,7 +13,7 @@ export const Day = ({day, year, month}) => {
 
     let note = '';
     try {
-        const date = new Date(year, month, day).toISOString().substring(0, 10);
+        const date = getDayId(year, month, day);
         note = notes[date]; 
     } catch {}
 
